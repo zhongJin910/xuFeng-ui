@@ -17,14 +17,14 @@
     "Readme.md",
     "package.json"
   ],
-  "main": "./lib/web-vue.umd.js",
-  "module": "./lib/web-vue.mjs",
+  "main": "./lib/xu-feng.umd.js",
+  "module": "./lib/xu-feng.mjs",
   "exports": {
     ".": {
-      "import": "./lib/web-vue.mjs",
-      "require": "./lib/web-vue.umd.js"
+      "import": "./lib/xu-feng.mjs",
+      "require": "./lib/xu-feng.umd.js"
     },
-    "./lib/style.css": "./lib/style.css"
+    "./lib/style.css": "./lib/css/index.css"
   },
   "engines": {
     "node": ">=16.0.0"
