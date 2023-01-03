@@ -1,0 +1,46 @@
+.rb-buttom_primary {
+    background-color: red;
+}
+
+button {
+    outline: none;
+}
+
+.rb-button {
+    padding: 12px 20px;
+    overflow: hidden;
+    border-radius: 6px;
+    border: 0;
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    outline: none;
+    font-weight: 400;
+    -webkit-appearance: none;
+    user-select: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.1s linear;
+    box-sizing: border-box;
+}
+
+.rb-button+.rb-button {
+    margin-left: 10px;
+}
+
+.rb-button_type__default {
+    color: #fff;
+    background-color: #409eff;
+    border-color: #409eff;
+}
+
+.rb-button_disabled {
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.rb-button_disabled:focus,
+.rb-button_disabled:hover {
+    background-color: #f7f7fa;
+    outline: none;
+}

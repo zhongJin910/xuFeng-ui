@@ -1,0 +1,58 @@
+{
+  "name": "@xf_design/xu-feng",
+  "version": "1.0.0",
+  "private": false,
+  "author": "z206674576@163.com",
+  "description": "xf Design - A Vue.js 3 UI library, @xf_design/xu-feng",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zj3213/xuFeng-ui.git"
+  },
+  "keywords": [
+    "@xf_design/xu-feng"
+  ],
+  "files": [
+    "lib/*",
+    "packages/*",
+    "Readme.md",
+    "package.json"
+  ],
+  "main": "./lib/web-vue.umd.js",
+  "module": "./lib/web-vue.mjs",
+  "exports": {
+    ".": {
+      "import": "./lib/web-vue.mjs",
+      "require": "./lib/web-vue.umd.js"
+    },
+    "./lib/style.css": "./lib/style.css"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "run-p type-check build-only",
+    "preview": "vite preview",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --noEmit",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
+  },
+  "dependencies": {
+    "vue": "^3.2.45"
+  },
+  "devDependencies": {
+    "@rushstack/eslint-patch": "^1.1.4",
+    "@types/node": "^18.11.12",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vitejs/plugin-vue-jsx": "^3.0.0",
+    "@vue/eslint-config-typescript": "^11.0.0",
+    "@vue/tsconfig": "^0.1.3",
+    "eslint": "^8.22.0",
+    "eslint-plugin-vue": "^9.3.0",
+    "npm-run-all": "^4.1.5",
+    "typescript": "~4.7.4",
+    "vite": "^4.0.0",
+    "vite-plugin-vue-setup-extend": "^0.4.0",
+    "vue-tsc": "^1.0.12"
+  }
+}
