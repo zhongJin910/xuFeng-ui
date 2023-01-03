@@ -4,16 +4,26 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import vueSetupExtend from "vite-plugin-vue-setup-extend";
+// import usePluginImport from "vite-plugin-importer";
 import { resolve } from "node:path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(), vueJsx(), vueSetupExtend()],
+  plugins: [
+    vue(),
+    vueJsx(),
+    vueSetupExtend(),
+    // usePluginImport({
+    //   libraryName: "@xf-design/xu-feng",
+    //   customStyleName: (name) => {
+    //     return `@xf-design/xu-feng/lib/style.css`;
+    //   },
+    // }),
+  ],
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
       "@p": fileURLToPath(new URL("./packages", import.meta.url)),
-      "/images": "./packages/theme/image",
     },
   },
   build: {

@@ -1,7 +1,9 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import xfDesign from "../packages/index";
+import xfDesign from "@xf-design/xu-feng";
 
-import "./assets/main.css";
+console.log(xfDesign,'xfDesign');
+
+import "@xf-design/xu-feng/lib/style.css";
 
 createApp(App).use(xfDesign).mount("#app");
