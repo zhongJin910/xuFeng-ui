@@ -1,15 +1,15 @@
 {
-  "name": "@xf-design/xu-feng",
-  "version": "1.0.3-beta1",
+  "name": "xufen-ui",
+  "version": "1.0.1-beta2",
   "private": false,
   "author": "z206674576@163.com",
-  "description": "xf Design - A Vue.js 3 UI library, @xf_design/xu-feng",
+  "description": "xufen Design - A Vue.js 3 UI library, xufen-ui",
   "repository": {
     "type": "git",
     "url": "https://github.com/zj3213/xuFeng-ui.git"
   },
   "keywords": [
-    "@xf_design/xu-feng"
+    "@xufen-design/xufen-ui"
   ],
   "files": [
     "lib/*",
