@@ -35,16 +35,17 @@ export default defineConfig({
     lib: {
       entry: {
         ...getComponentEntries("packages/components"),
-        index: resolve("./packages/index.ts"),
+        index: resolve(__dirname, "./packages/index.ts"),
       },
 
-      name: "XuFeng",
-      fileName: "xu-feng",
+      // name: "XuFeng",
+      // fileName: "xu-feng",
     },
     rollupOptions: {
       external: ["vue"],
       output: {
-        // entryFileNames: "js/[name].js",
+        preserveModules: true,
+        entryFileNames: "js/[name].js",
         assetFileNames: "[ext]/[name].[ext]",
         globals: {
           vue: "Vue",
