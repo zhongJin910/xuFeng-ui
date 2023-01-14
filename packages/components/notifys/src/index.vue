@@ -1,40 +1,42 @@
 <script lang="ts">
-  import { ref, onMounted, defineComponent } from 'vue'
+import { ref, onMounted, defineComponent } from "vue";
 
-  export default defineComponent({
-    name: 'QzdNotifys',
-    props: {
-      // 提示消息
-      message: {
-        type: String,
-        default: '',
-        required: true,
-      },
-      // Notifys类型
+export default defineComponent({
+  name: "QzdNotifys",
+  props: {
+    // 提示消息
+    message: {
       type: String,
-      duration: Number,
-      position: String,
-      zIndex: Number,
-      switchBut: Boolean,
-      btnText: String,
-      callback: Function,
-      transition: Boolean,
-      distance: Number,
+      default: "",
+      required: true,
     },
-    setup(props) {
-      const isShow = ref(false)
-      onMounted(() => {
-        isShow.value = true
-        if (props.duration) setTimeout(() => (isShow.value = false), props.duration)
-      })
+    // Notifys类型
+    type: String,
+    duration: Number,
+    position: String,
+    zIndex: Number,
+    switchBut: Boolean,
+    btnText: String,
+    callback: Function,
+    transition: Boolean,
+    distance: Number,
+  },
+  setup(props) {
+    const isShow = ref(false);
+    onMounted(() => {
+      isShow.value = true;
+      if (props.duration)
+        setTimeout(() => (isShow.value = false), props.duration);
+    });
 
-      const handleButFn = () => {
-        if (props.callback && props.callback instanceof Function) props.callback()
-      }
+    const handleButFn = () => {
+      if (props.callback && props.callback instanceof Function)
+        props.callback();
+    };
 
-      return { isShow, handleButFn }
-    },
-  })
+    return { isShow, handleButFn };
+  },
+});
 </script>
 
 <template>
@@ -53,82 +55,81 @@
   </Transition>
 </template>
 
-<style scoped lang="scss">
-  .notifys_top-enter-from,
-  .notifys_top-leave-to {
-    transform: translateY(-78px);
-    opacity: 0;
-  }
+<style scoped>
+.notifys_top-enter-from,
+.notifys_top-leave-to {
+  transform: translateY(-78px);
+  opacity: 0;
+}
 
-  .notifys_bottom-enter-from,
-  .notifys_bottom-leave-to {
-    transform: translateY(78px);
-    opacity: 0;
-  }
+.notifys_bottom-enter-from,
+.notifys_bottom-leave-to {
+  transform: translateY(78px);
+  opacity: 0;
+}
 
-  .notifys_top-enter-active,
-  .notifys_bottom-enter-active {
-    transition: all 0.8s;
-  }
+.notifys_top-enter-active,
+.notifys_bottom-enter-active {
+  transition: all 0.8s;
+}
 
-  .notifys_top-leave-active,
-  .notifys_bottom-leave-active {
-    transition: all 0.5s;
-  }
+.notifys_top-leave-active,
+.notifys_bottom-leave-active {
+  transition: all 0.5s;
+}
 
-  .notifys_top-enter-to,
-  .notifys_bottom-enter-to,
-  .notifys_top-leave-from,
-  .notifys_bottom-leave-from {
-    opacity: 1;
-  }
+.notifys_top-enter-to,
+.notifys_bottom-enter-to,
+.notifys_top-leave-from,
+.notifys_bottom-leave-from {
+  opacity: 1;
+}
 
-  .qzd-notifys_message {
-    width: calc(100vw - 48px);
-    position: fixed;
-    left: 24px;
-    line-height: 50px;
-    padding: 16px 16px 18px;
-    background: #ffffff;
-    border: 1px solid rgba(174, 207, 255, 1);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.qzd-notifys_message {
+  width: calc(100vw - 48px);
+  position: fixed;
+  left: 24px;
+  line-height: 50px;
+  padding: 16px 16px 18px;
+  background: #ffffff;
+  border: 1px solid rgba(174, 207, 255, 1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.qzd-notifys_message i {
+  margin-right: 4px;
+  vertical-align: middle;
+}
 
-    i {
-      margin-right: 4px;
-      vertical-align: middle;
-    }
+.qzd-notifys_message .text {
+  font-size: 28px;
+  color: #63656a;
+  line-height: 36px;
+  font-weight: 400;
+  vertical-align: middle;
+}
 
-    .text {
-      font-size: 28px;
-      color: #63656a;
-      line-height: 36px;
-      font-weight: 400;
-      vertical-align: middle;
-    }
+.qzd-notifys_message .but {
+  width: 144px;
+  height: 56px;
+  background: #3981f4;
+  border-radius: 8px;
+  font-size: 24px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 58px;
+  font-weight: 400;
+  flex-shrink: 0;
+  margin-left: 24px;
+}
 
-    .but {
-      width: 144px;
-      height: 56px;
-      background: #3981f4;
-      border-radius: 8px;
-      font-size: 24px;
-      color: #ffffff;
-      text-align: center;
-      line-height: 58px;
-      font-weight: 400;
-      flex-shrink: 0;
-      margin-left: 24px;
-    }
-  }
+.notifys_bottom {
+  bottom: 78px;
+}
 
-  .notifys_bottom {
-    bottom: 78px;
-  }
-
-  .notifys_top {
-    top: 78px;
-  }
+.notifys_top {
+  top: 78px;
+}
 </style>
