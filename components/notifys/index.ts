@@ -17,10 +17,15 @@ const div = document.createElement("div");
 div.setAttribute("class", "qzd-notifys");
 document.body.appendChild(div);
 
+console.log('NotifysEl');
+
+
 // 定时器
 let timer = ref<any>(null);
 let isNode = ref<boolean>(true);
-const Notify = (props: Props, isclose = false): void => {
+const Notifys = (props: Props, isclose = false): void => {
+  console.log('Notify');
+
   render(null, div);
   if (isclose) {
     render(null, div);
@@ -63,7 +68,7 @@ const Notify = (props: Props, isclose = false): void => {
     }
   }
 };
-Notify.close = () => Notify({ message: "" }, true);
+// Notify.close = () => Notify({ message: "" }, true);
 
 // 不要删除，以后可能会加类型
 // Notifys.sussess = (message: string, duration?: number) => {
@@ -78,4 +83,5 @@ Notify.close = () => Notify({ message: "" }, true);
 // Notifys.info = (message: string, duration?: number) => {
 //   Notifys({ type: 'info', message, duration })
 // }
-export default Notify;
+const Notify = () => Notifys
+export default Notify
