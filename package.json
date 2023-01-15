@@ -35,8 +35,9 @@
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit",
-    "vp": "npm version prerelease",
+    "vp": "npm version prerelease --preid=alpha -m 'update %s'",
     "lib": "node build/index.js",
+    "build:publish":"npm run vp && npm run lib && npm publish",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
