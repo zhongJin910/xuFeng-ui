@@ -4,6 +4,7 @@ const fs = require('fs')
 const { defineConfig, build } = require('vite')
 const vue = require('@vitejs/plugin-vue')
 const vueJsx = require('@vitejs/plugin-vue-jsx')
+const vueSetupExtend = require('vite-plugin-vue-setup-extend')
 
 
 const entryDir = path.resolve(__dirname, '../components')
@@ -13,7 +14,7 @@ const outputDir = path.resolve(__dirname, '../lib')
 const baseConfig = defineConfig({
     configFile: false,
     publicDir: false,
-    plugins: [vue(), vueJsx()]
+    plugins: [vue(), vueJsx(), vueSetupExtend()]
 })
 
 const rollupOptions = {
