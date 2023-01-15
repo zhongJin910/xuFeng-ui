@@ -13,7 +13,7 @@
   ],
   "files": [
     "lib/*",
-    "packages/*",
+    "components/*",
     "Readme.md",
     "package.json"
   ],
@@ -35,6 +35,7 @@
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit",
+    "vp": "npm version prerelease",
     "lib": "node build/index.js",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
