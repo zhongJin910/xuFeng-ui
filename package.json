@@ -1,6 +1,6 @@
 {
   "name": "xufeng-ui",
-  "version": "1.0.1-beta2",
+  "version": "1.0.1-alpha.0",
   "private": false,
   "author": "z206674576@163.com",
   "description": "xufeng Design - A Vue.js 3 UI library, xufeng-ui",
@@ -17,14 +17,14 @@
     "Readme.md",
     "package.json"
   ],
-  "main": "./lib/xu-feng.umd.js",
-  "module": "./lib/xu-feng.mjs",
+  "main": "./lib/index.umd.js",
+  "module": "./lib/index.mjs",
   "exports": {
     ".": {
-      "import": "./lib/xu-feng.mjs",
-      "require": "./lib/xu-feng.umd.js"
+      "import": "./lib/index.mjs",
+      "require": "./lib/index.umd.js"
     },
-    "./lib/style.css": "./lib/css/index.css"
+    "./lib/style.css": "./lib/style.css"
   },
   "engines": {
     "node": ">=16.0.0"
@@ -35,11 +35,10 @@
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit",
-    "lib": "node ./build/index.js",
+    "lib": "node build/index.js",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "fs-extra": "^11.1.0",
     "vue": "^3.2.45"
   },
   "devDependencies": {
@@ -52,6 +51,7 @@
     "@vue/tsconfig": "^0.1.3",
     "eslint": "^8.22.0",
     "eslint-plugin-vue": "^9.3.0",
+    "fs-extra": "^11.1.0",
     "npm-run-all": "^4.1.5",
     "typescript": "~4.7.4",
     "vite": "^4.0.0",
