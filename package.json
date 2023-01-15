@@ -1,6 +1,6 @@
 {
   "name": "xufeng-ui",
-  "version": "1.0.1-alpha.2",
+  "version": "1.0.1-alpha.3",
   "private": false,
   "author": "z206674576@163.com",
   "description": "xufeng Design - A Vue.js 3 UI library, xufeng-ui",
@@ -37,7 +37,7 @@
     "type-check": "vue-tsc --noEmit",
     "vp": "npm version prerelease",
     "lib": "node build/index.js",
-    "build:publish":"npm run vp && npm run lib && npm publish",
+    "build:publish": "npm run vp && npm run lib && npm publish",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
