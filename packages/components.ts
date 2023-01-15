@@ -1,5 +1,5 @@
-import xfButton from "./components/button";
-import xfTab from "./components/tab";
+import XfButton from "./components/button";
+import XfNotify from "./components/notifys";
 
-export default [xfButton, xfTab];
-export { xfButton, xfTab };
+export default [XfButton, XfNotify];
+export { XfButton, XfNotify };

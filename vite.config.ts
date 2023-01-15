@@ -6,6 +6,7 @@ import vueJsx from "@vitejs/plugin-vue-jsx";
 import vueSetupExtend from "vite-plugin-vue-setup-extend";
 // import usePluginImport from "vite-plugin-importer";
 import { resolve } from "node:path";
+import { getComponentEntries } from "./build/utils";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -32,14 +33,19 @@ export default defineConfig({
     // sourcemap: true, //是否构建source map 文件
     cssCodeSplit: true, //css代码拆分,禁用则所有样式保存在一个css里面
     lib: {
-      entry: resolve(__dirname, "./packages/index.ts"),
-      name: "XuFeng",
-      fileName: "xu-feng",
+      entry: {
+        ...getComponentEntries("packages/components"),
+        index: resolve(__dirname, "./packages/index.ts"),
+      },
+
+      // name: "XuFeng",
+      // fileName: "xu-feng",
     },
     rollupOptions: {
       external: ["vue"],
       output: {
-        // entryFileNames: "js/[name].js",
+        preserveModules: true,
+        entryFileNames: "js/[name].js",
         assetFileNames: "[ext]/[name].[ext]",
         globals: {
           vue: "Vue",
