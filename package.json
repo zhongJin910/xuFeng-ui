@@ -35,9 +35,11 @@
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit",
+    "lib": "node ./build/index.js",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "fs-extra": "^11.1.0",
     "vue": "^3.2.45"
   },
   "devDependencies": {
