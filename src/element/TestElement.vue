@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { XfButton } from 'xufeng-ui'
 
 </script>
 <template>
