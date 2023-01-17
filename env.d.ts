@@ -1,2 +1,2 @@
 /// <reference types="vite/client" />
-declare module 'xufeng-ui'
+declare module 'xufeng'

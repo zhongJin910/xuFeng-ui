@@ -14,11 +14,11 @@ export default defineConfig({
     vueJsx(),
     vueSetupExtend(),
     usePluginImport({
-      libraryName: "xufeng-ui",
+      libraryName: "xufeng",
       // 'style': true
       customStyleName: (name) => {
         console.log(name, 'name');
-        return `xufeng-ui/lib/${'button'}/style.css`;
+        return `xufeng/lib/${'button'}/style.css`;
       },
     }),
   ],
