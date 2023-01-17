@@ -66,7 +66,7 @@ const createPackageJson = (name) => {
   "name": "${name}",
   "version": "0.0.0",
   "main": "index.umd.js",
-  "module": "index.es.js",
+  "module": "index.mjs",
   "style": "style.css"
 }`
 
