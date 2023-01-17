@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { XfButton } from 'xufeng-ui'
+import { Button } from 'xufeng-ui'
 
 </script>
 <template>
   <div>
-    <xf-button>你好</xf-button>
+    <Button>你好</Button>
   </div>
 </template>
 

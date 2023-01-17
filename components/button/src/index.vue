@@ -1,4 +1,4 @@
-<script lang="ts" setup name="xfButton">
+<script lang="ts" setup name="Button">
 import { defineProps, computed } from "vue";
 import type { PropType } from "vue";
 
