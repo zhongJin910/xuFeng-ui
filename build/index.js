@@ -55,7 +55,8 @@ const buildSingle = async (name) => {
                 fileName: 'index',
                 formats: ['es', 'umd']
             },
-            outDir: path.resolve(outputDir, name)
+            outDir: path.resolve(outputDir, name),
+            minify: false
         }
     }))
 }

@@ -1,9 +1,9 @@
 {
-  "name": "xufeng-ui",
-  "version": "1.0.1-alpha.7",
+  "name": "xufeng",
+  "version": "1.0.2-alpha.0",
   "private": false,
   "author": "z206674576@163.com",
-  "description": "xufeng Design - A Vue.js 3 UI library, xufeng-ui",
+  "description": "xufeng Design - A Vue.js 3 UI library, xufeng",
   "repository": {
     "type": "git",
     "url": "https://github.com/zj3213/xuFeng-ui.git"

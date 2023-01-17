@@ -23,7 +23,7 @@ console.log('NotifysEl');
 // 定时器
 let timer = ref<any>(null);
 let isNode = ref<boolean>(true);
-const Notifys = (props: Props, isclose = false): void => {
+const Notify = (props: Props, isclose = false): void => {
   console.log('Notify');
 
   render(null, div);
@@ -83,5 +83,4 @@ const Notifys = (props: Props, isclose = false): void => {
 // Notifys.info = (message: string, duration?: number) => {
 //   Notifys({ type: 'info', message, duration })
 // }
-const Notify = () => Notifys
 export default Notify

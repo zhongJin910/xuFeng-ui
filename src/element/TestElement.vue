@@ -1,5 +1,13 @@
 <script setup lang="ts">
-import { Button } from 'xufeng-ui'
+import { Button, Notifys } from 'xufeng-ui'
+import { nextTick } from 'vue'
+const init = () => {
+  console.log('init');
+
+  Notifys({ message: 'nihao' })
+}
+nextTick(() => init())
+
 
 </script>
 <template>
