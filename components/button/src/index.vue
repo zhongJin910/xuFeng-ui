@@ -29,5 +29,5 @@ const classAll = computed(() => [
 </template>
 
 <style scoped>
-@import "./index.css";
+@import "./style.css";
 </style>
