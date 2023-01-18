@@ -7,6 +7,7 @@ interface Props {
 }
 
 export default defineComponent({
+    name: 'Button',
     props: {
         type: {
             type: String,
