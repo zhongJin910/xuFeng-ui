@@ -1,58 +1,39 @@
-<script lang="ts">
-import { ref, onMounted, defineComponent } from "vue";
+<script lang="ts" setup>
+import { ref, onMounted, defineProps } from "vue";
+// import type {PropType} from 'vue'
+interface Props {
+  type?: "default" | "success" | "error" | "warning" | "info";
+  message: string;
+  duration?: number;
+  zIndex?: number;
+  switchBut?: boolean;
+  position?: "top" | "bottom";
+  btnText?: string;
+  callback?: Function;
+  distance?: number;
+  transition?: boolean;
+}
+const { message, duration, position, transition, distance } = defineProps<Props>()
 
-export default defineComponent({
-  name: "QzdNotifys",
-  props: {
-    // 提示消息
-    message: {
-      type: String,
-      default: "",
-      required: true,
-    },
-    // Notifys类型
-    type: String,
-    duration: Number,
-    position: String,
-    zIndex: Number,
-    switchBut: Boolean,
-    btnText: String,
-    callback: Function,
-    transition: Boolean,
-    distance: Number,
-  },
-  setup(props) {
-    const isShow = ref(false);
-    onMounted(() => {
-      isShow.value = true;
-      if (props.duration)
-        setTimeout(() => (isShow.value = false), props.duration);
-    });
-
-    const handleButFn = () => {
-      if (props.callback && props.callback instanceof Function)
-        props.callback();
-    };
-
-    return { isShow, handleButFn };
-  },
+const isShow = ref(false);
+onMounted(() => {
+  isShow.value = true;
+  if (duration)
+    setTimeout(() => (isShow.value = false), duration);
 });
+
+
 </script>
 
 <template>
-  <Transition :name="transition && !distance ? `notifys_${position}` : ''">
-    <div
-      class="qzd-notifys_message"
-      :class="`notifys_${position}`"
-      v-show="isShow"
-      :style="{ zIndex, [`${position}`]: distance + 'px' }"
-    >
-      <span class="text double-line-ellipsis">{{ message }}</span>
-      <template v-if="switchBut">
-        <p class="but" @click="handleButFn">{{ btnText }}</p>
-      </template>
-    </div>
-  </Transition>
+  <Teleport to="body">
+    <Transition :name="transition && !distance ? `notifys_${position}` : ''">
+      <div class="notifys_message" :class="`notifys_${position}`" v-show="isShow"
+        :style="{ [`${position}`]: distance + 'px' }">
+        <span class="text double-line-ellipsis">{{ message }}</span>
+      </div>
+    </Transition>
+  </Teleport>>
 </template>
 
 <style scoped>
@@ -85,7 +66,7 @@ export default defineComponent({
   opacity: 1;
 }
 
-.qzd-notifys_message {
+.notifys_message {
   width: calc(100vw - 48px);
   position: fixed;
   left: 24px;
@@ -98,12 +79,13 @@ export default defineComponent({
   align-items: center;
   justify-content: space-between;
 }
-.qzd-notifys_message i {
+
+.notifys_message i {
   margin-right: 4px;
   vertical-align: middle;
 }
 
-.qzd-notifys_message .text {
+.notifys_message .text {
   font-size: 28px;
   color: #63656a;
   line-height: 36px;
@@ -111,7 +93,7 @@ export default defineComponent({
   vertical-align: middle;
 }
 
-.qzd-notifys_message .but {
+.notifys_message .but {
   width: 144px;
   height: 56px;
   background: #3981f4;

@@ -17,8 +17,7 @@ export default defineConfig({
       libraryName: "xufeng",
       // 'style': true
       customStyleName: (name) => {
-        console.log(name, 'name');
-        return `xufeng/lib/${'button'}/style.css`;
+        return `xufeng/lib/${name}/style.css`;
       },
     }),
   ],

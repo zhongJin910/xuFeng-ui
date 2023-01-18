@@ -1,18 +1,14 @@
 <script setup lang="ts">
 import { Button, Notifys } from 'xufeng'
-import { nextTick } from 'vue'
-const init = () => {
-  console.log('init');
-  setTimeout(Notifys({ message: 'nihao' }), 10000)
-  // Notifys({ message: 'nihao' })
+const handleNotifysFn = () => {
+  Notifys({ message: 'nihao', duration: 0 })
 }
-// nextTick(() => init())
 
 
 </script>
 <template>
   <div>
-    <Button>你好</Button>
+    <Button @click="handleNotifysFn">你好</Button>
   </div>
 </template>
 
