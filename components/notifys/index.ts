@@ -17,40 +17,34 @@ document.body.appendChild(div);
 // 定时器
 let timer = ref<any>(null);
 let isNode = ref<boolean>(true);
-const Notify = (props: Props, isclose = false): void => {
-  console.log('Notify');
-
+const Notify = (props: Props): void => {
   render(null, div);
-  if (isclose) {
-    render(null, div);
-    isNode.value = true;
-  } else {
-    const {
-      type = "default",
+  const {
+    type = "default",
+    message,
+    position = "bottom",
+    distance,
+    duration = 3000,
+  }: Props = props;
+  if (isNode.value) {
+    isNode.value = false;
+    setTimeout(() => (isNode.value = true), duration);
+    const vNode = h(NotifysEl, {
+      type,
       message,
-      position = "bottom",
+      duration,
+      position,
       distance,
-      duration = 3000,
-    }: Props = props;
-    if (isNode.value) {
-      isNode.value = false;
-      setTimeout(() => (isNode.value = true), duration);
-      const vNode = h(NotifysEl, {
-        type,
-        message,
-        duration,
-        position,
-        distance,
-      });
-      render(vNode, div);
-      timer && clearTimeout(timer.value);
-      if (duration) {
-        timer.value = setTimeout(() => {
-          render(null, div);
-        }, duration + 500);
-      }
+    });
+    render(vNode, div);
+    timer && clearTimeout(timer.value);
+    if (duration) {
+      timer.value = setTimeout(() => {
+        render(null, div);
+      }, duration + 500);
     }
   }
+
 };
 // Notify.close = () => Notify({ message: "" }, true);
 

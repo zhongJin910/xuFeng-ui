@@ -18,7 +18,7 @@ specifiers:
   vite-plugin-vue-setup-extend: ^0.4.0
   vue: ^3.2.45
   vue-tsc: ^1.0.12
-  xufeng: 1.0.2-alpha.3
+  xufeng: 1.0.2-alpha.4
 
 dependencies:
   vue: 3.2.45
@@ -40,7 +40,7 @@ devDependencies:
   vite-plugin-importer: 0.2.5
   vite-plugin-vue-setup-extend: 0.4.0_vite@4.0.3
   vue-tsc: 1.0.19_typescript@4.7.4
-  xufeng: 1.0.2-alpha.3
+  xufeng: 1.0.2-alpha.4
 
 packages:
 
@@ -2630,8 +2630,8 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /xufeng/1.0.2-alpha.3:
-    resolution: {integrity: sha512-6B2Cj+NtqF3rPHqfK797BLQrgltw42LGMaYgjZ8kgtOExN9A8OQZCQZ0zMSdixN1EvKZcCUQz2+JoS1gtaTNew==}
+  /xufeng/1.0.2-alpha.4:
+    resolution: {integrity: sha512-FQs5EP8BZmvQdS0X/kfr5qzv3wAV/ZV8j4k/AVV16FWV87kXg38aHs0f5M2fWbW99S0BNpp6wjXaxQx+QryTQw==}
     engines: {node: '>=16.0.0'}
     dependencies:
       vue: 3.2.45

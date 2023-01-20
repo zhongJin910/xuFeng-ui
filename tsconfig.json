@@ -5,7 +5,7 @@
     "src/**/*",
     "src/**/*.vue",
     "build/**/*"
-  ],
+, "components/button/src/index.vue.ts"  ],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
