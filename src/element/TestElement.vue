@@ -1,9 +1,14 @@
 <script setup lang="ts">
+import { nextTick } from 'vue'
 import { Button, Notifys } from 'xufeng'
 const handleNotifysFn = () => {
   Notifys({ message: 'nihao', duration: 0 })
 }
 
+nextTick(() => {
+  console.log(document.createElement('div'));
+
+})
 
 </script>
 <template>
