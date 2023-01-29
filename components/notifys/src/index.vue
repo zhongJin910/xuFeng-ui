@@ -33,7 +33,7 @@ onMounted(() => {
         <span class="text double-line-ellipsis">{{ message }}</span>
       </div>
     </Transition>
-  </Teleport>>
+  </Teleport>
 </template>
 
 <style scoped>
